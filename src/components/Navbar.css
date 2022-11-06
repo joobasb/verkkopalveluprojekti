@@ -1,0 +1,45 @@
+.bg-light {
+    background-color: white !important;
+}
+
+.container-fluid {
+    align-items: center;
+    margin-left: 50px;
+}
+
+
+.nav-item {
+    margin: 5px;
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+.navbar-toggler:focus {
+    background-color: white;;
+}
+
+.form-control {
+    padding: 0;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.dropdown-menu {
+    border-radius: 0;
+    box-shadow: none;
+    background-color: rgb(255, 252, 252);
+}
+
+.dropdown-menu li {
+    text-align: left;
+    margin-left: 5px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .container-fluid {
+        margin-left: 0;
+    }
+  }

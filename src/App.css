@@ -1,0 +1,26 @@
+html {
+  min-height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: auto !important;
+  position: relative;
+
+}
+
+.info-col {
+  margin: 10px 0px 10px 0px;
+}
+
+.category-container {
+  height: auto !important;
+  position: relative;
+}
+
+.category-col {
+  text-align: center;
+  height: 200px;
+  
+}
+

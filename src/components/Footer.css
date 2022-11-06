@@ -1,0 +1,17 @@
+.footer {
+    border-top: 1px solid black;
+    bottom: 0;
+    height: 100px;
+    margin-top: 10px;
+    padding-top:10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+  }
+}
