@@ -10,11 +10,11 @@ import NotFound from './pages/NotFound';
 import Product from './pages/Product';
 import Products from './pages/Products';
 
+
 function App() {
   return (
     <>
     <Navbar />
-
     <div className='container'>
       <Routes>
         <Route path="/" element={<Home/>} />

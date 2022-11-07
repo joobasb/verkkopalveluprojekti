@@ -1,6 +1,8 @@
+
 .bg-light {
     background-color: white !important;
 }
+
 
 .container-fluid {
     align-items: center;
@@ -11,6 +13,15 @@
 .nav-item {
     margin: 5px;
 }
+
+.nav-item #theme-icon {
+    color: grey;
+}
+
+#theme-icon:hover {
+    color: black;
+}
+
 
 .navbar-toggler {
     color: white;
