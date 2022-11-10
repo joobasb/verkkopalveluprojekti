@@ -38,14 +38,41 @@
 }
 
 .dropdown-menu {
-    border-radius: 0;
     box-shadow: none;
     background-color: rgb(255, 252, 252);
 }
 
 .dropdown-menu li {
     text-align: left;
-    margin-left: 5px;
+}
+
+.dropdown-menu.login {
+    margin: 5px;
+}
+
+.loginform input {
+    border: 1px solid grey;
+    margin: 2px;
+
+    
+}
+
+.login-btn {
+    border-radius: 5px;
+    border: 1px solid grey;
+    color: grey;
+    margin: 2px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .nav-item {
+        font-size: 1.15vw;
+    }
+
+    .dropdown-menu.login input::placeholder {
+        size: 1.15vw;
+    }
+    
 }
 
 
@@ -53,4 +80,13 @@
     .container-fluid {
         margin-left: 0;
     }
+    .nav-item{
+        font-size: 15px;
+    }
+    .dropdown-menu li {
+        text-align: left;
+        margin-left: 5px;
+    }
+    
+    
   }

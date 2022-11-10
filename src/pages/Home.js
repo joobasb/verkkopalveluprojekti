@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       {/*Main information */}
-      <h2 style={{ textAlign: "center" }}>Tervetuloa verkkokauppaamme</h2>
+      <h2 style={{ textAlign: "center" }}>Tervetuloa panimokauppaamme</h2>
 
       {/*Carousel here?*/}
       <div className="row">
