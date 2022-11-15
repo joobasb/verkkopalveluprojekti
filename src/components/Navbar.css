@@ -31,6 +31,7 @@
     background-color: white;;
 }
 
+
 .form-control {
     padding: 0;
     margin-top: 8px;
@@ -50,6 +51,16 @@
     margin: 5px;
 }
 
+.dropdown-menu .sub-categories {
+    position: relative;
+}
+
+/* search icon */
+.input-group-text {
+    background-color: white;
+    margin-top: 7px;
+}
+
 .loginform input {
     border: 1px solid grey;
     margin: 2px;
@@ -62,6 +73,16 @@
     border: 1px solid grey;
     color: grey;
     margin: 2px;
+}
+
+.dropdown-menu.sub-categories {
+    list-style: circle;
+    background-color:whitesmoke;
+    line-height: 0.8;
+    border-bottom: 1px solid grey;
+    padding-right: 0;
+    padding-left: 1.75rem;
+    position:relative !important;
 }
 
 @media only screen and (max-width: 1200px) {
