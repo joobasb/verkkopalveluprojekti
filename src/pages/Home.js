@@ -1,13 +1,15 @@
 import React from "react";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
     <>
       {/*Main information */}
-      <h2 style={{ textAlign: "center" }}>Tervetuloa panimokauppaamme</h2>
+      {/* <h2 style={{ textAlign: "center" }}>Tervetuloa panimokauppaamme</h2> */}
 
       {/*Carousel here?*/}
-      <div className="row">
+      <Carousel />
+{/*       <div className="row">
         <div className="info-col col-md-12">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
@@ -30,10 +32,10 @@ export default function Home() {
             dolorum explicabo, fugiat quibusdam omnis inventore a.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/*Some product categories */}
-      <div className="category-container">
+{/*       <div className="category-container">
       <div className="row">
         <div className="category-col col-sm-12 col-md-6 col-lg-3">
           <h2>Kategoria 1</h2>
@@ -90,7 +92,7 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      </div>
+      </div> */}
     </>
   );
 }
