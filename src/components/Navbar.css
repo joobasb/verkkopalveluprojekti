@@ -3,6 +3,13 @@
     background-color: white !important;
 }
 
+span {
+    color: #1d6d95;
+}
+
+span:hover {
+    color: #1d6d95b3;
+}
 
 .container-fluid {
     align-items: center;
