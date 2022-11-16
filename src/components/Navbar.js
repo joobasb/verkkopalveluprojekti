@@ -37,7 +37,7 @@ export default function Navbar() {
                 <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenuClickableInside">
                     <li><Link to="/products" className="nav-link"><span>k a i k k i</span></Link></li>
                     <li><Link to="/*" className="nav-link"><span>u u t u u d e t</span></Link></li>
-                    <a className="nav-link dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <a className="nav-link beer-cat dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                     <span>o l u e t &nbsp;</span>
                     </a>
                     <ul className="dropdown-menu sub-categories"aria-labelledby="dropdownMenuClickableInside" data-bs-popper="relative">

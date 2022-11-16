@@ -115,6 +115,8 @@ span:hover {
         text-align: left;
         margin-left: 5px;
     }
-    
+    .beer-cat > span {
+        margin-left: 5px;
+    }
     
   }
