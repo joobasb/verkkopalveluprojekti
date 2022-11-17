@@ -1,0 +1,34 @@
+
+  .carousel-item {
+    height: 30rem;
+  }
+
+  .carousel{
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-top: .5rem;
+  }
+
+  .marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+    padding-top: .5rem;
+  }
+
+  .btn.btn-secondary {
+    background-color: #ffffff;
+    color: #1d6d95;
+  }
+
+.btn:first-child:active {
+    background-color: #283f66;
+}
