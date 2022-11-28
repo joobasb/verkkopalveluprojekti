@@ -1,7 +1,83 @@
+import axios from 'axios';
 import React from 'react'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Sidenav from '../components/Sidenav';
 
-export default function Products() {
+export default function Products({url,addToCart}) {
+
+const [products, setProducts] = useState([]);
+const [category, setCategory] = useState('');
+
+let params = useParams();
+
+useEffect(() => {
+    axios.get(url + 'products/getproducts.php/' + params.categoryId)
+    .then((response) => {
+        const json = response.data; 
+        setCategory(json.category);
+        setProducts(json.products);
+        //console.log(json);
+    }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error)
+    })
+}, [params]);
+
+/* const [categories, setCategories] = useState([]);
+
+useEffect(() => {
+axios.get(url + 'products/getcategories.php')
+.then((response) => {
+    const json = response.data;
+    setCategories(json);
+    //console.log(json);
+}).catch (error => {
+    alert(error.response === undefined ? error : error.response.data.error);
+}) 
+}, []); */
+
   return (
-    <div>Products</div>
+    <>
+    <div className="productspage">
+    <h1>Tuotevalikoima</h1>
+    <h2>{category}</h2>
+    <div className="products-container">
+    <div className="row">
+    <div className="col-lg-2 col-sm-12">
+    <Sidenav url={url}/> 
+{/*     <ul>
+    {categories.map(category => (
+        <li className="categorylist" key={category.id}>
+            {<Link
+            className='dropdown-item'
+            to={'/products/' + category.id}>{category.name}
+            </Link>}
+        </li>
+    ))}
+    </ul> */}
+    </div>
+    <div className="col-sm-10">
+    <div className="row">
+    {products.map(product => (
+        <div className="col-lg-4 product-card" key={product.id} style={{backgroundImage: url + "images/" + product.image}}>
+            
+            <h3>{product.name}</h3>
+                
+            <div className="product-details">
+                {product.price}€<br/>
+                {product.percent ? product.percent + "%" : "" }
+                <button className="add-cart-btn" type="button" onClick={e => addToCart(product)}>osta</button>
+            </div>
+           
+        </div>
+        
+    ))}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </>
   )
 }
