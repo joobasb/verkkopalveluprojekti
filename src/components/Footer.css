@@ -6,8 +6,8 @@
     position: relative;
     text-align: center;
     width: 100%;
-    color: grey;
-    background-color: white;
+    color: #FFFFFF;
+    background-color: #008080;
 }
 
 @media only screen and (max-width: 991px) {

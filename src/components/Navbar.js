@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Cart from './Cart'
@@ -28,7 +28,7 @@ export default function Navbar({url, cart}) {
   return (
     <nav id="nav" className="navbar navbar-expand-lg navbar-light bg-light">
     <div className="container-fluid">
-        <Link to="/" className="navbar-brand" alt="koti"><span>H o m e</span></Link>
+        <NavLink to="/" className="navbar-brand" alt="koti"><span>H o m e</span></NavLink>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@ export default function Navbar({url, cart}) {
                     </div>
                     </li>
                 <li className="nav-item">
-                    <Link to="/about" className="nav-link"><span>m e i s t ä</span></Link>
+                    <NavLink to="/about" className="nav-link"><span>m e i s t ä</span></NavLink>
                 </li>
                 <li className="nav-item dropdown">
                 <div className="dropdown">
@@ -52,18 +52,18 @@ export default function Navbar({url, cart}) {
                 </a>
 
                 <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenuClickableInside">
-                    <li><Link to="/products" className="nav-link"><span>k a i k k i</span></Link></li>
-                    <li><Link to="/*" className="nav-link"><span>u u t u u d e t</span></Link></li>
+                    <li><NavLink to="/products" className="nav-link"><span>k a i k k i</span></NavLink></li>
+                    <li><NavLink to="/*" className="nav-link"><span>u u t u u d e t</span></NavLink></li>
                     <a className="nav-link beer-cat dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                     <span>t u o t e k a t e g o r i a t &nbsp;</span>
                     </a>
                     <ul className="dropdown-menu sub-categories"aria-labelledby="dropdownMenuClickableInside" data-bs-popper="relative">
                         {categories.map(category => (
                             <li className="categorylist" key={category.id}>
-                                {<Link
+                                {<NavLink
                                 className='dropdown-item'
                                 to={'/products/' + category.id}>{category.name}
-                                </Link>}
+                                </NavLink>}
                             </li>
                         ))}
                         </ul>
@@ -77,7 +77,7 @@ export default function Navbar({url, cart}) {
                 </li>
  
                 <li className="nav-item">
-                    <Link to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></Link>
+                    <NavLink to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></NavLink>
                 </li>
                 <li className="nav-item nav-cart">
                     <Cart cart={cart}/>

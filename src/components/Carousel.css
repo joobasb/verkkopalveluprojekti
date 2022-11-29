@@ -1,6 +1,6 @@
 
   .carousel-item {
-    height: 30rem;
+    height: 20rem;
   }
 
   .carousel{
@@ -13,6 +13,7 @@
 }
 
 .marketing .col-lg-4 {
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
     padding-top: .5rem;
