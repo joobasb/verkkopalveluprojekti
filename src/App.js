@@ -14,7 +14,7 @@ import Product from './pages/Product';
 import Products from './pages/Products';
 import Sidenav from './components/Sidenav';
 
-const URL = 'http://localhost/testi1/';
+const URL = 'http://localhost/verkkokauppaback/';
 
 
 function App() {
