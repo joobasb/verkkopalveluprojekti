@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div><h1 style={{textAlign:"center"}}>PANIMON NAME</h1></div>
+    <header>
+    <div  style={{textAlign:"center"}}><h1>Programmer's Brewing Company</h1>
+    <p>npx i create-good-beer</p></div>
+    </header>
   )
 }

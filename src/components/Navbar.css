@@ -1,4 +1,11 @@
 
+#nav {
+    position: fixed;
+    top: 10%;
+    z-index: 10;
+    width: 100%;
+}
+
 .bg-light {
     background-color: white !important;
 }
@@ -19,10 +26,15 @@ span:hover {
 
 .nav-item {
     margin: 5px;
+    width: 150px;
+    text-align: center;
 }
 
 .nav-item #theme-icon {
     color: grey;
+    position: absolute;
+    right: 4%;
+    margin-top: -5px;
 }
 
 #theme-icon:hover {
@@ -30,7 +42,7 @@ span:hover {
 }
 
 .nav-cart {
-    margin-top: 13px;
+    margin-top: 12.5px;
 }
 
 .navbar-toggler {
@@ -94,19 +106,21 @@ span:hover {
     position:relative !important;
     letter-spacing: 2px;
     border-radius: 0;
+    font-size: 16px;
+    color: #1d6d95 !important;
 }
 
 
-
 @media only screen and (max-width: 1200px) {
-    .nav-item {
-        font-size: 1.15vw;
-    }
-
-    .dropdown-menu.login input::placeholder {
+ /*     .dropdown-menu.login input::placeholder {
         size: 1.15vw;
+    } */
+/*     .nav-item {
+        text-align: left;
     }
     
+
+     */
 }
 
 
@@ -116,6 +130,11 @@ span:hover {
     }
     .nav-item{
         font-size: 15px;
+        text-align: left;
+    }
+    .nav-item #theme-icon {
+        left: 5%;
+        bottom: 5%;
     }
     .dropdown-menu li {
         text-align: left;

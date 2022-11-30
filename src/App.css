@@ -6,7 +6,18 @@ html {
   width: 100%;
   height: auto !important;
   position: relative;
+  margin-top: 170px;
 
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  z-index: 10;
+  background-color:#008080;
 }
 
 .info-col {
@@ -24,6 +35,8 @@ html {
   
 }
 
+
+
 #theme-btn {
   border: none;
   background-color: white;
@@ -32,7 +45,11 @@ html {
 
 .add-cart-btn {
   position: absolute;
-  right:5%;
+  bottom: 0;
+  left: 25%;
+  margin: 10px;
+  width: 100px;
+  border-radius: 4px;
 }
 
 .product-card {
@@ -40,12 +57,17 @@ html {
   width: 250px;
   border:rgb(72, 72, 105);
   box-shadow: 1px 1px 2px 2px grey;
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 5px;
   text-align: left;
   position: relative;
   overflow: auto;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: 45%;
+}
+
+.product-card span{
+  font-size: 25px;
 }
 
 
@@ -60,8 +82,23 @@ html {
   margin: 10px;
 }
 
+.productpage-item {
+  text-align: center;
+  margin: 10px;
+}
+
+.product-page-container {
+  width: 100%;
+  min-height: 600px;
+  margin-top: 20px;
+}
+
 .productspage {
   min-height: 600px;
+}
+
+.productspage h2 {
+  margin-left: 150px;
 }
 
 .sidenav {
@@ -69,14 +106,17 @@ html {
   height: 100%;
   color: #1d6d95;
   font-size: 20px;
+  line-height: 40px;
+}
+
+.sidenav ul {
+  list-style: none;
+  position: absolute;
+  left: 0;
 }
 
 .sidenav li:hover {
   color: #1d6d95b3;
-}
-
-.sidenav.category-list:hover {
-  color: red;
 }
 
 
@@ -85,5 +125,22 @@ html {
     display:flex;
     border-bottom: 1px solid black;
     border-right: none;
+  }
+  .product-card {
+    width: 220px;
+}
+.sidenav ul {
+  position: relative;
+}
+
+}
+
+@media only screen and (max-width: 555px) {
+  .product-card {
+    width: 100%;
+  }
+  .add-cart-btn {
+    position: absolute;
+    left: 37%;
   }
 }

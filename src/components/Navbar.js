@@ -82,7 +82,7 @@ export default function Navbar({url, cart}) {
                 <li className="nav-item nav-cart">
                     <Cart cart={cart}/>
                 </li>
-                <li className="nav-item dropdown">
+{/* kirjautuminen       <li className="nav-item dropdown">
   
                         <form className="nav-link loginform dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                             <span>k i r j a u d u &nbsp;</span>
@@ -98,7 +98,7 @@ export default function Navbar({url, cart}) {
                             </li>
                         </ul>
                         </form>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <span><ThemeChanger /></span>
                 </li>
