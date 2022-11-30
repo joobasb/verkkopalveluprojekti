@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import NotFound from './pages/NotFound';
+import Order from './components/Order';
 import Product from './pages/Product';
 import Products from './pages/Products';
 import Sidenav from './components/Sidenav';
@@ -19,14 +20,44 @@ const URL = 'http://localhost/testi1/';
 function App() {
 
   const [cart, setCart] = useState([]);
+
+
+  //lukee säilötyn localstorage-ostoskorin vaikka sivu päivitetään
+  useEffect(() => {
+    if ('cart' in localStorage) {
+      setCart(JSON.parse(localStorage.getItem('cart')));
+    }
+  }, [])
+
   //tuotteen lisääminen koriin
   function addToCart(product){
-    const newCart = [...cart,product];
+    if (cart.some(item=> item.id === product.id)) {
+      const existingProduct = cart.filter(item => item.id === product.id);
+      updateAmount(parseInt(existingProduct[0].amount) + 1,product);
+    } else {
+    const newCart = [...cart, product];
     setCart(newCart);
     localStorage.setItem('cart',JSON.stringify(newCart));
-
+    console.log(newCart);
+    }
   }
 
+  //tuotteen poistaminen ostoskorista
+  function removeFromCart(product){
+    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    setCart(itemsWithoutRemoved)
+    localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
+  }
+
+
+  //ostoskorin määrän päivittäminen
+  function updateAmount(amount,product) {
+    product.amount = amount;
+    const index = cart.findIndex((item => item.id === product.id));
+    const modifiedCart = Object.assign([...cart], {[index]: product});
+    setCart(modifiedCart);
+    localStorage.setItem('cart',JSON.stringify(modifiedCart));
+  }
   
 
 
@@ -40,7 +71,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/products" element={<Product url={URL}/>} />
+        <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>}/>
+        <Route path="products/:categoryId/product/:productId" element={<Product url={URL} addToCart={addToCart}/>} />
         <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>

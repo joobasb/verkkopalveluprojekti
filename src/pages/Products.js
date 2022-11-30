@@ -3,12 +3,14 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Product from './Product';
 import Sidenav from '../components/Sidenav';
 
 export default function Products({url,addToCart}) {
 
 const [products, setProducts] = useState([]);
 const [category, setCategory] = useState('');
+const [amount, setAmount] = useState("");
 
 let params = useParams();
 
@@ -57,17 +59,16 @@ axios.get(url + 'products/getcategories.php')
     ))}
     </ul> */}
     </div>
-    <div className="col-sm-10">
+    <div className="col-lg-10 col-sm-12">
     <div className="row">
     {products.map(product => (
-        <div className="col-lg-4 product-card" key={product.id} style={{backgroundImage: url + "images/" + product.image}}>
+        <div className="col-sm-4 product-card" key={product.id} style={{backgroundImage:`url("${url}images/${product.image}")`}}>
             
-            <h3>{product.name}</h3>
-                
+           <Link to={'product/' + product.id}><h3>{product.name}</h3></Link>
             <div className="product-details">
-                {product.price}€<br/>
-                {product.percent ? product.percent + "%" : "" }
-                <button className="add-cart-btn" type="button" onClick={e => addToCart(product)}>osta</button>
+                <span>{product.price}€</span><br/>
+                <span>{product.percent ? product.percent + "%" : "" }</span>
+                <button className="add-cart-btn" type="button" onClick={e => addToCart(product)}>Lisää koriin</button>
             </div>
            
         </div>
