@@ -1,6 +1,6 @@
 
   .carousel-item {
-    height: 51rem;
+    height: 42rem;
   }
 
   .carousel{
@@ -12,8 +12,16 @@
     width: 100vw;
 }
 
+  .carousel-control-next {
+    display: none;
+}
+
+  .carousel-control-prev {
+    display: none;
+}
+
 .marketing .col-lg-4 {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
     padding-top: .5rem;
@@ -28,9 +36,59 @@
   .btn.btn-secondary {
     background-color: #ffffff;
     color: #1d6d95;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
 .btn:first-child:active {
     background-color: #283f66;
+}
+
+
+@media only screen and (max-width: 991px) {
+  img {
+    height: 155px;
+    width: 155px;
+  }
+
+  .btn.btn-secondary {
+    font-size: 1rem;
+  }
+
+  .container .marketing{
+    background-color: #ffffff;
+    background-image: url("/public/images/logo.png");
+    background-size: 20%;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+    padding-top: 0rem !important;
+  }
+
+  .carousel-inner {
+    background-color: #ffffff;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+
+  .btn.btn-secondary {
+    background-color: #1d6d95;
+    color: #ffffff;
+  }
+
+  .btn:first-child:active {
+    background-color: #34724c;
+  }
+
+  .d-block {
+    display: none !important;
+  }
 }
