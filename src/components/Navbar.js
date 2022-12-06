@@ -46,41 +46,37 @@ export default function Navbar({url, cart}) {
                     <NavLink to="/about" className="nav-link"><span>m e i s t ä</span></NavLink>
                 </li>
                 <li className="nav-item dropdown">
-                <div className="dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                    <span>t u o t e v a l i k o i m a &nbsp;</span>
-                </a>
-
-                <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenuClickableInside">
-                    <li><NavLink to="/products" className="nav-link"><span>k a i k k i</span></NavLink></li>
-                    <li><NavLink to="/*" className="nav-link"><span>u u t u u d e t</span></NavLink></li>
-                    <a className="nav-link beer-cat dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                    <span>t u o t e k a t e g o r i a t &nbsp;</span>
+                    <div className="dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                        <span>t u o t e v a l i k o i m a &nbsp;</span>
                     </a>
-                    <ul className="dropdown-menu sub-categories"aria-labelledby="dropdownMenuClickableInside" data-bs-popper="relative">
-                        {categories.map(category => (
-                            <li className="categorylist" key={category.id}>
-                                {<NavLink
-                                className='dropdown-item'
-                                to={'/products/' + category.id}>{category.name}
-                                </NavLink>}
-                            </li>
-                        ))}
-                        </ul>
-
-                        {/*KOVAKOODATTU KATEGORIALISTA <li><Link to="/*" className="nav-link"><span>v a a l e a t</span></Link></li>
-                        <li><Link to="/*" className="nav-link"><span>t u m m a t</span></Link></li>
-                        <li><Link to="/*" className="nav-link"><span>e r i k o i s</span></Link></li> */}
-                    
-                </ul>
-                </div>
+                
+                    <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenuClickableInside">
+                        <li><NavLink to="/products" className="nav-link " id="dropdownMenuClickableInside" data-bs-auto-close="inside"><span>k a i k k i</span></NavLink></li>
+                        <li><NavLink to="/*" className="nav-link"id="dropdownMenuClickableInside" data-bs-auto-close="inside"><span>u u t u u d e t</span></NavLink></li>
+                        <a className="nav-link beer-cat dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                        <span>t u o t e k a t e g o r i a t &nbsp;</span>
+                        </a>
+                        <ul className="dropdown-menu sub-categories"aria-labelledby="dropdownMenuClickableInside" data-bs-auto-close="inside" data-bs-popper="relative">
+                            {categories.map(category => (
+                                <li className="categorylist" key={category.id}>
+                                    {<NavLink
+                                    className='dropdown-item'
+                                    to={'/products/' + category.id}>{category.name}
+                                    </NavLink>}
+                                </li>
+                            ))}
+                        </ul>    
+                    </ul>
+                    </div>
                 </li>
  
                 <li className="nav-item">
                     <NavLink to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></NavLink>
                 </li>
                 <li className="nav-item nav-cart">
-                    <Cart cart={cart}/>
+                    <NavLink to="/order" className="nav-link"><Cart cart={cart}/></NavLink>
+                    
                 </li>
 {/* kirjautuminen       <li className="nav-item dropdown">
   

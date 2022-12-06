@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import NotFound from './pages/NotFound';
-import Order from './components/Order';
+import Order from './pages/Order';
 import Product from './pages/Product';
 import Products from './pages/Products';
 import Sidenav from './components/Sidenav';
@@ -23,24 +23,25 @@ function App() {
 
 
   //lukee säilötyn localstorage-ostoskorin vaikka sivu päivitetään
-  useEffect(() => {
+/*   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
     }
-  }, [])
+  }, []) */
 
   //tuotteen lisääminen koriin
   function addToCart(product){
-    if (cart.some(item=> item.id === product.id)) {
-      const existingProduct = cart.filter(item => item.id === product.id);
+    if (cart.some(item => item.id === product.id)) {
+      const existingProduct = cart.filter(item => item.id ===product.id);
       updateAmount(parseInt(existingProduct[0].amount) + 1,product);
     } else {
+      product['amount'] = 1;
     const newCart = [...cart, product];
     setCart(newCart);
     localStorage.setItem('cart',JSON.stringify(newCart));
     console.log(newCart);
-    }
-  }
+    }}
+  
 
   //tuotteen poistaminen ostoskorista
   function removeFromCart(product){
@@ -70,10 +71,9 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>}/>
-        <Route path="products/:categoryId/product/:productId" element={<Product url={URL} addToCart={addToCart}/>} />
-        <Route path="/products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path="products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
+        <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

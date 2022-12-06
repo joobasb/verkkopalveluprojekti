@@ -27,13 +27,13 @@ export default function Product({url, addToCart}) {
       <article>
         (tähän jokaiselle tuotteelle jotenkin tietokannan kautta omat infot niin hyvä tulee varmaankin varmaan hyvä laittaa jotain muitakin haettavia arvoja kuten panimo ja humalalajit ja yms)
       </article>
-      <div key={product?.id}>
+      <div key={product.id}>
         <button className="primary-btn" type="button" onClick={e => addToCart(product)}>add</button>
       </div>
     </div>
     <div className="col-lg-5 productpage-item">
       { product.image ?
-        <img style={{width: '450px'}} src={url + 'images/' + product?.image}/>:
+        <img style={{width: '450px'}} src={url + 'images/' + product?.image} alt="tuotekuva"/>:
         <img style={{width: '450px'}} src={url + 'images/placeholder.png'} />
       }
   
