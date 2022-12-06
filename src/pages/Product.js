@@ -25,7 +25,7 @@ export default function Product({url, addToCart}) {
       <p>{product.percent ? product.percent + "%" : "" }</p>
       <p>{product.price}€</p>
       <article>
-        (tähän jokaiselle tuotteelle jotenkin tietokannan kautta omat infot niin hyvä tulee varmaankin varmaan hyvä laittaa jotain muitakin haettavia arvoja kuten panimo ja humalalajit ja yms)
+        {product.description}
       </article>
       <div key={product.id}>
         <button className="primary-btn" type="button" onClick={e => addToCart(product)}>add</button>
