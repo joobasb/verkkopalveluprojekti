@@ -24,16 +24,16 @@ export default function Carousel() {
 
         <div class="row"> 
           <div class="col-lg-4">
-          <img src="images/image1.jpg" alt="..." class="rounded-circle border border-light" width="200" height="200"/>      
+          <img src="images/can.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
           <p><a class="btn btn-secondary" href="#">Oluet &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-          <img src="images/image2.jpg" alt="..." class="rounded-circle border border-light" width="200" height="200"/>      
+          <img src="images/paita.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
             <p><a class="btn btn-secondary" href="#">Oheistuotteet &raquo;</a></p>
           </div>
           <div class="col-lg-4">
-          <img src="images/image3.jpg" alt="..." class="rounded-circle border border-light" width="200" height="200"/>      
-            <p><a class="btn btn-secondary" href="#">jotain &raquo;</a></p>
+          <img src="images/contact.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
+            <p><a class="btn btn-secondary" href="#">Ota yhteyttä &raquo;</a></p>
           </div>
         </div>
         </div>

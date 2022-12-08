@@ -3,6 +3,10 @@
     height: 42rem;
   }
 
+  .carousel-item > img {
+    height: 50rem;
+  }
+
   .carousel{
     position: relative;
     left: 50%;
