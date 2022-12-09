@@ -2,6 +2,10 @@ html {
   min-height: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100%;
   height: auto !important;
@@ -54,31 +58,59 @@ img.logo {
   margin-top: 7px;
 }
 
-.add-cart-btn {
+.add-cart-btn { 
   position: absolute;
-  bottom: 0;
-  left: 25%;
-  margin: 10px;
-  width: 100px;
-  border-radius: 4px;
+  bottom:0;
+  width:100%;
+  height: 30px;
+  border-top: 2px solid black;
+  left: 0;
+  color:black;
+  background-color: #008080;
 }
 
+
 .product-card {
-  height: 250px;
+  height: 300px;
   width: 250px;
-  border:rgb(72, 72, 105);
-  box-shadow: 1px 1px 2px 2px grey;
-  border-radius: 5px;
+  border:2px solid black;
+  /* box-shadow: 1px 1px 2px 2px grey; */
+  border-radius: 4px;
   margin: 5px;
   text-align: left;
   position: relative;
-  overflow: auto;
-  background-size: cover;
-  background-position: 45%;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(186, 186, 186);
+  padding: 0;
 }
 
 .product-card span{
   font-size: 25px;
+}
+
+.product-card-header {
+  text-align: center;
+  color: black;
+  background-color: #008080;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+.product-details {
+  margin-top: 30px;
+  height: 200px;
+  width: 250px;
+  position: absolute;
+  left:0;
+  margin-left: 10px;
+}
+
+.order-container {
+  min-height: 550px;
 }
 
 
@@ -109,7 +141,7 @@ img.logo {
 }
 
 .productspage h2 {
-  margin-left: 150px;
+  position: relative;
 }
 
 .sidenav {
@@ -164,9 +196,10 @@ img.logo {
   .product-card {
     width: 100%;
   }
-  .add-cart-btn {
-    position: absolute;
-    left: 37%;
+  .add-cart-btn{
+    height: 60px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px;
   }
 
   img.logo {
@@ -174,7 +207,11 @@ img.logo {
     height: 90px;
   
   }
-  
+  .product-details {
+    margin-top: 30px;
+    height: 210px;
+    width: 100
+  }
   .headerH1{
     font-size: 18px;
   }

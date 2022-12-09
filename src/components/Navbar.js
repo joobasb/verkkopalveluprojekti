@@ -39,9 +39,9 @@ export default function Navbar({url, cart}) {
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon" type="submit">
                         {searchIcon}
-                        </span>
+                    </span>
                     </div>
-                    </li>
+                </li>
                 <li className="nav-item">
                     <NavLink to="/about" className="nav-link"><span>m e i s t ä</span></NavLink>
                 </li>
@@ -75,26 +75,9 @@ export default function Navbar({url, cart}) {
                     <NavLink to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></NavLink>
                 </li>
                 <li className="nav-item nav-cart">
-                    <NavLink to="/order" className="nav-link"><Cart cart={cart}/></NavLink>
+                    <NavLink to="/order" className="nav-link"><span><Cart cart={cart}/></span></NavLink>
                     
                 </li>
-{/* kirjautuminen       <li className="nav-item dropdown">
-  
-                        <form className="nav-link loginform dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span>k i r j a u d u &nbsp;</span>
-                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li>
-                            <input type="text" placeholder="k ä y t t ä j ä t u n n u s"></input>
-                            </li>
-                            <li>
-                            <input type="text" placeholder="s a l a s a n a"></input>
-                            </li>
-                            <li>
-                            <button className="login-btn" onSubmit="">k i r j a u d u</button>
-                            </li>
-                        </ul>
-                        </form>
-                </li> */}
                 <li className="nav-item">
                     <span><ThemeChanger /></span>
                 </li>

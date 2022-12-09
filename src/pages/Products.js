@@ -10,7 +10,6 @@ export default function Products({url,addToCart}) {
 
 const [products, setProducts] = useState([]);
 const [category, setCategory] = useState('');
-const [amount, setAmount] = useState("");
 
 let params = useParams();
 
@@ -20,24 +19,11 @@ useEffect(() => {
         const json = response.data; 
         setCategory(json.category);
         setProducts(json.products);
-        //console.log(json);
     }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error)
     })
 }, [params]);
 
-/* const [categories, setCategories] = useState([]);
-
-useEffect(() => {
-axios.get(url + 'products/getcategories.php')
-.then((response) => {
-    const json = response.data;
-    setCategories(json);
-    //console.log(json);
-}).catch (error => {
-    alert(error.response === undefined ? error : error.response.data.error);
-}) 
-}, []); */
 
   return (
     <>
@@ -48,16 +34,6 @@ axios.get(url + 'products/getcategories.php')
     <div className="row">
     <div className="col-lg-2 col-sm-12">
     <Sidenav url={url}/> 
-{/*     <ul>
-    {categories.map(category => (
-        <li className="categorylist" key={category.id}>
-            {<Link
-            className='dropdown-item'
-            to={'/products/' + category.id}>{category.name}
-            </Link>}
-        </li>
-    ))}
-    </ul> */}
     </div>
     <div className="col-lg-10 col-sm-12">
     <div className="row">

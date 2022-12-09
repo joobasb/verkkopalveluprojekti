@@ -4,6 +4,7 @@
     top: 10%;
     z-index: 10;
     width: 100%;
+
 }
 
 .bg-light {
@@ -23,10 +24,12 @@ span:hover {
     margin-left: 50px;
 }
 
-
+.categorylist > .dropdown-item {
+    color:#1d6d95 !important;
+}
 .nav-item {
     margin: 5px;
-    width: 150px;
+    width: 160px;
     text-align: center;
 }
 
@@ -43,6 +46,10 @@ span:hover {
 
 .nav-cart {
     margin-top: 5px;
+}
+
+.nav-search {
+    width: 200px;
 }
 
 .navbar-toggler {
@@ -73,10 +80,6 @@ span:hover {
     margin: 5px;
 }
 
-.dropdown-menu .sub-categories {
-    position: relative;
-}
-
 /* search icon */
 .input-group-text {
     background-color: white;
@@ -86,8 +89,6 @@ span:hover {
 .loginform input {
     border: 1px solid grey;
     margin: 2px;
-
-    
 }
 
 .login-btn {
@@ -109,6 +110,7 @@ span:hover {
     font-size: 16px;
     color: #1d6d95 !important;
 }
+
 
 
 @media only screen and (max-width: 1200px) {
@@ -144,4 +146,11 @@ span:hover {
         margin-left: 5px;
     }
     
+    #nav {
+        box-shadow: 0px 0px 5px 0px;
+    }
+
+    .nav-search {
+        width: 90vw;
   }
+}
