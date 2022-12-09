@@ -23,11 +23,16 @@ function App() {
 
 
   //lukee säilötyn localstorage-ostoskorin vaikka sivu päivitetään
-/*   useEffect(() => {
+  useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));
     }
-  }, []) */
+  }, [])
+
+  function emptyCart(cart) {
+      setCart([]);
+      localStorage.removeItem('cart');
+  }
 
   //tuotteen lisääminen koriin
   function addToCart(product){
@@ -71,7 +76,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/order" element={<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>}/>
+        <Route path="/order" element={<Order cart={cart} url={URL} removeFromCart={removeFromCart} updateAmount={updateAmount} empty={emptyCart}/>}/>
+        {/* <Route path="products" element={<Products url={URL} addToCart={addToCart}/>} /> */}
         <Route path="products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
         <Route path="*" element={<NotFound />} />
