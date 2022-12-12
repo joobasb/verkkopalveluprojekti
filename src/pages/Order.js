@@ -93,6 +93,7 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
             <td></td>
           </tr>
         </tbody>
+        <button className="empty-cart-btn" onClick={empty}>tyhjennä ostoskori</button>
       </table>
       {cart.length > 0 &&
       <>
@@ -108,7 +109,7 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
           </div>
           <div className="form-group">
             <label>Sähköposti</label>
-            <input className="form-control" onChange={e=>setEmail(e.target.value)}/>
+            <input className="form-control" type="email" onChange={e=>setEmail(e.target.value)}/>
           </div>
           <div className="form-group">
             <label>Osoite</label>

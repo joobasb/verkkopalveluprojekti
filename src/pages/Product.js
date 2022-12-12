@@ -22,6 +22,7 @@ export default function Product({url, addToCart}) {
     <div className="row">
     <div className="col-lg-5 productpage-item">
       <h3>{product.name}</h3>
+      <p>{product.brewery}</p><br/>
       <p>{product.percent ? product.percent + "%" : "" }</p>
       <p>{product.price}€</p>
       <article>
@@ -33,7 +34,7 @@ export default function Product({url, addToCart}) {
     </div>
     <div className="col-lg-5 productpage-item">
       { product.image ?
-        <img style={{width: '450px'}} src={url + 'images/' + product?.image} alt="tuotekuva"/>:
+        <img style={{width: '450px'}} src={url + 'images/' + product?.image} alt="tuotekuva by crayion.com"/>:
         <img style={{width: '450px'}} src={url + 'images/placeholder.png'} />
       }
   

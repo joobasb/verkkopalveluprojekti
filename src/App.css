@@ -50,7 +50,11 @@ img.logo {
   
 }
 
-
+.empty-cart-btn {
+  background-color: grey;
+  position: absolute;
+  right: 10%;
+}
 
 #theme-btn {
   border: none;
@@ -61,20 +65,19 @@ img.logo {
 .add-cart-btn { 
   position: absolute;
   bottom:0;
+  border: none;
   width:100%;
-  height: 30px;
-  border-top: 2px solid black;
+  height: 40px;
   left: 0;
   color:black;
-  background-color: #008080;
+  background-color: grey;
 }
 
 
 .product-card {
   height: 300px;
   width: 250px;
-  border:2px solid black;
-  /* box-shadow: 1px 1px 2px 2px grey; */
+  border:1px solid black;
   border-radius: 4px;
   margin: 5px;
   text-align: left;
@@ -86,6 +89,12 @@ img.logo {
   padding: 0;
 }
 
+.product-card:hover > .product-details {
+  visibility: visible;
+  background-color:rgb(186, 186, 186);
+}
+
+
 .product-card span{
   font-size: 25px;
 }
@@ -93,20 +102,22 @@ img.logo {
 .product-card-header {
   text-align: center;
   color: black;
-  background-color: #008080;
+  background-color: grey;
   position: absolute;
+  height: 40px;
   top: 0;
   width: 100%;
   left: 0;
 }
 
 .product-details {
-  margin-top: 30px;
-  height: 200px;
-  width: 250px;
+  margin-top:40px;
+  height: 80%;
+  width: 100%;
   position: absolute;
   left:0;
-  margin-left: 10px;
+  visibility: hidden;
+  padding: 50px;
 }
 
 .order-container {
@@ -208,7 +219,7 @@ img.logo {
   
   }
   .product-details {
-    margin-top: 30px;
+    margin-top: 40px;
     height: 210px;
     width: 100
   }
