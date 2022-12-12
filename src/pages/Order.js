@@ -80,7 +80,7 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
                 <td>{product.name}</td>
                 <td>{product.price} €</td>
                 <td>
-                  <input ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)}/>
+                  <input ref={inputs[index]} type="number" min="0" style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)}/>
                 </td>
                 <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
               </tr>
@@ -101,27 +101,27 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
         <form onSubmit={order}>
           <div className="form-group">
             <label>Etunimi</label>
-            <input className="form-control" onChange={e=>setFirstName(e.target.value)}/>
+            <input className="form-control" onChange={e=>setFirstName(e.target.value)} required/>
           </div>
           <div className="form-group">
             <label>Sukunimi</label>
-            <input className="form-control" onChange={e=>setLastName(e.target.value)}/>
+            <input className="form-control" onChange={e=>setLastName(e.target.value)} required/>
           </div>
           <div className="form-group">
             <label>Sähköposti</label>
-            <input className="form-control" type="email" onChange={e=>setEmail(e.target.value)}/>
+            <input className="form-control" type="email" onChange={e=>setEmail(e.target.value)} required/>
           </div>
           <div className="form-group">
             <label>Osoite</label>
-            <input className="form-control" onChange={e=>setAddress(e.target.value)}/>
+            <input className="form-control" onChange={e=>setAddress(e.target.value)} required/>
           </div>
           <div className="form-group">
             <label>Postinumero</label>
-            <input className="form-control" onChange={e=>setZip(e.target.value)}/>
+            <input className="form-control" type="number" min="0" max="99999" onChange={e=>setZip(e.target.value)} required/>
           </div>
           <div className="form-group">
             <label>Kaupunki</label>
-            <input className="form-control" onChange={e=>setCity(e.target.value)}/>
+            <input className="form-control" onChange={e=>setCity(e.target.value)} required/>
           </div>
           <div className="order-button">
             <button>Tilaa</button>
