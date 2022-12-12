@@ -13,7 +13,34 @@ const [category, setCategory] = useState('');
 
 let params = useParams();
 
+
 useEffect(() => {
+    let address = '';
+
+    if (params.searchPhrase === undefined) {
+        address = url + 'products/getproducts.php/' + params.categoryId;
+    } else {
+        address = url + 'products/searchproducts.php/' + params.searchPhrase;
+    }
+
+    axios.get(address)
+    .then((response) => {
+        const json = response.data;
+        if (params.searchPhrase === undefined) {
+            setCategory(json.category);
+            setProducts(json.products);
+        } else {
+            setCategory(params.searchPhrase);
+            setProducts(json);
+        }
+    }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+    })
+}, [params]
+)
+
+
+/* useEffect(() => {
     axios.get(url + 'products/getproducts.php/' + params.categoryId)
     .then((response) => {
         const json = response.data; 
@@ -24,7 +51,7 @@ useEffect(() => {
     })
 }, [params]);
 
-
+ */
   return (
     <>
     <div className="productspage">
@@ -42,8 +69,11 @@ useEffect(() => {
             
            <Link to={'/product/' + product.id}><h3 className="product-card-header">{product.name}</h3></Link>
             <div className="product-details">
+                <span>panimo: </span>
+                <span>{product.brewery}</span><br/>
+                <span>hinta: </span>
                 <span>{product.price}€</span><br/>
-                <span>{product.percent ? product.percent + "%" : "" }</span>
+                <span>{product.percent ? "abv: " + product.percent +  "%" : "" }</span>
             </div>
             <div className="add-cart-div">
                 <button className="add-cart-btn" type="button" onClick={e => addToCart(product)}>Lisää koriin</button>

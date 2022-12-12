@@ -80,6 +80,7 @@ function App() {
         {/* <Route path="products" element={<Products url={URL} addToCart={addToCart}/>} /> */}
         <Route path="products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
+        <Route path="search/:searchPhrase" element ={<Products url={URL} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
