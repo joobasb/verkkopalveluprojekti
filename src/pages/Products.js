@@ -69,10 +69,8 @@ useEffect(() => {
             
            <Link to={'/product/' + product.id}><h3 className="product-card-header">{product.name}</h3></Link>
             <div className="product-details">
-                <span>panimo: </span>
-                <span>{product.brewery}</span><br/>
-                <span>hinta: </span>
-                <span>{product.price}€</span><br/>
+                <span>panimo: {product.brewery}</span><br/>
+                <span>hinta: {product.price}€</span><br/>
                 <span>{product.percent ? "abv: " + product.percent +  "%" : "" }</span>
             </div>
             <div className="add-cart-div">
