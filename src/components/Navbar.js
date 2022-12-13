@@ -62,17 +62,12 @@ export default function Navbar({url, cart}) {
                 </li>
                 <li className="nav-item dropdown">
                     <div className="dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                    <a className="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                         <span>t u o t e v a l i k o i m a &nbsp;</span>
                     </a>
                 
-                    <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenuClickableInside">
-                        <li><NavLink to="/products" className="nav-link " id="dropdownMenuClickableInside" data-bs-auto-close="inside"><span>k a i k k i</span></NavLink></li>
-                        <li><NavLink to="/*" className="nav-link"id="dropdownMenuClickableInside" data-bs-auto-close="inside"><span>u u t u u d e t</span></NavLink></li>
-                        <a className="nav-link beer-cat dropdown-toggle" href="#" role="button"  id="dropdownMenuClickableInside" data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
-                        <span>t u o t e k a t e g o r i a t &nbsp;</span>
-                        </a>
-                        <ul className="dropdown-menu sub-categories"aria-labelledby="dropdownMenuClickableInside" data-bs-auto-close="inside" data-bs-popper="relative">
+                    <ul className="dropdown-menu product-menu" aria-labelledby="dropdownMenu">
+                        
                             {categories.map(category => (
                                 <li className="categorylist" key={category.id}>
                                     {<NavLink
@@ -82,7 +77,6 @@ export default function Navbar({url, cart}) {
                                 </li>
                             ))}
                         </ul>    
-                    </ul>
                     </div>
                 </li>
  
