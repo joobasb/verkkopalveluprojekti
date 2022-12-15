@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Cart from './Cart'
-import "../components/Navbar.css"
+import "../styles/Navbar.css"
 import ThemeChanger from './ThemeChanger'
 
 const searchIcon = <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" background-color="white" color="black" class="bi bi-search" viewBox="0 0 16 16">

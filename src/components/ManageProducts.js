@@ -2,7 +2,7 @@ import React, {useState, useEffect}  from 'react';
 import axios from 'axios';
 import CategoryList from './CategoryList';
 import uuid from 'react-uuid';
-import './Manage.css';
+import '../styles/Manage.css';
 
 
 export default function ManageProducts({url}) {

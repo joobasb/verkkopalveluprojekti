@@ -1,0 +1,29 @@
+.container{
+    min-height: 600px;
+}
+
+.row{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.about-text{
+    font-size: larger;
+}
+
+.about-listheader{
+    margin-top: 50px;
+}
+
+.about-list{
+    font-size: x-large;
+}
+
+.about-img{
+width: auto;  
+margin-left: 10px;
+margin-right: 850px;
+padding: 15px;  
+border: 3px solid black;  
+height: auto;    
+}
