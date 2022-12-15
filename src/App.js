@@ -85,8 +85,6 @@ function App() {
         <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
         <Route path="search/:searchPhrase" element ={<Products url={URL} />} />
         <Route path="*" element={<NotFound />} />
-{/*         <Route path="/manage-products" element={<ManageProducts url={URL} />} />
-        <Route path="/manage-categories" element={<ManageCategories url={URL} />} /> */}
         <Route path="/manage" element={<Manage url={URL} />}/>
       </Routes>
     </div>
