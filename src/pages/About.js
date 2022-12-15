@@ -1,4 +1,4 @@
-import "./About.css";
+import "../components/About.css";
 import React from "react";
 
 export default function About() {
@@ -26,7 +26,11 @@ export default function About() {
             <li>Vuoden ekoteko 2022</li>
           </ul>
         </div>
+        <div className="about-img">
+          <img src="images/image4.png" width = "400" height = "400"></img>
+        </div>
       </div>
     </div>
+    
   );
 }
