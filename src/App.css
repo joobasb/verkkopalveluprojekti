@@ -53,6 +53,9 @@ img.logo {
 .categorylist > .dropdown-item:hover {
   color: grey;
 }
+.categorylist > .dropdown-item:active {
+  color: grey;
+}
 
 .empty-cart-btn {
   background-color: grey;
@@ -83,7 +86,6 @@ img.logo {
 .add-cart-btn:hover {
   color: white;
 }
-
 
 .product-card {
   height: 300px;
@@ -151,12 +153,6 @@ img.logo {
   background-color: whitesmoke;
 }
 
-/* .product-card img {
-  object-fit: contain;
-  width: 100%;
-  height: 100%;
-}
- */
 .products-container {
   width: auto;
   margin: 10px;

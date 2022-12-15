@@ -52,6 +52,7 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
       }
     })
     .then(() => {
+      //tyhjennä tilaus lähetyksen jälkeen
       empty();
       setFinished(true);
       console.log(json);
@@ -60,7 +61,7 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
     });
 
   }
-
+  //tuotteen määrän muuttaminen
   function changeAmount(e,product,index){
     updateAmount(e.target.value,product);
     setInputIndex(index);

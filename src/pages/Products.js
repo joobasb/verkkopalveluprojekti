@@ -55,8 +55,7 @@ useEffect(() => {
   return (
     <>
     <div className="productspage">
-    <h1>Tuotevalikoima</h1>
-    <h2>{category}</h2>
+    <h1>{category}</h1>
     <div className="products-container">
     <div className="row">
     <div className="col-lg-2 col-sm-12">
