@@ -1,0 +1,20 @@
+.about-container{
+    min-height: 600px;
+}
+
+.about-header{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.about-text{
+    font-size: larger;
+}
+
+.about-listheader{
+    margin-top: 50px;
+}
+
+.about-list{
+    font-size: x-large;
+}
