@@ -9,7 +9,7 @@ export default function Footer() {
           <p>Panimokatu 13, <br/>90123 Oulu</p> 
           <p>Contact</p>
           <p>Tel. 010 123 4567</p>
-          <p>panimonnimi@kalja.fi</p>
+          <p>programmers@brewing.com</p>
       </div>
     </footer>
   )

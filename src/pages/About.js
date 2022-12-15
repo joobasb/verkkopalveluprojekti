@@ -26,7 +26,6 @@ export default function About() {
             <li>Vuoden ekoteko 2022</li>
           </ul>
         </div>
-        <div className="about-foto"></div>
       </div>
     </div>
   );
