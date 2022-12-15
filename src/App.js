@@ -13,6 +13,9 @@ import Order from './pages/Order';
 import Product from './pages/Product';
 import Products from './pages/Products';
 import Sidenav from './components/Sidenav';
+import Manage from './pages/Manage';
+import ManageProducts from './components/ManageProducts';
+import ManageCategories from './components/ManageCategories';
 
 const URL = 'http://localhost/verkkokauppaback/';
 
@@ -82,6 +85,9 @@ function App() {
         <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
         <Route path="search/:searchPhrase" element ={<Products url={URL} />} />
         <Route path="*" element={<NotFound />} />
+{/*         <Route path="/manage-products" element={<ManageProducts url={URL} />} />
+        <Route path="/manage-categories" element={<ManageCategories url={URL} />} /> */}
+        <Route path="/manage" element={<Manage url={URL} />}/>
       </Routes>
     </div>
     <Footer />

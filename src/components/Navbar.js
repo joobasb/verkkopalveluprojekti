@@ -83,6 +83,9 @@ export default function Navbar({url, cart}) {
                 <li className="nav-item">
                     <NavLink to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></NavLink>
                 </li>
+                <li className="nav-item">
+                    <NavLink to="/manage" className="nav-link"><span>manage</span></NavLink>
+                </li>
                 <li className="nav-item nav-cart">
                     <NavLink to="/order" className="nav-link"><span><Cart cart={cart}/></span></NavLink>
                     
