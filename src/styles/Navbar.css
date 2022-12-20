@@ -84,16 +84,30 @@ span:hover {
     margin-top: 7px;
 }
 
-.loginform input {
-    border: 1px solid grey;
+.login-form, .login-form span{
+
+    display:flex;
+    margin-top: 4px;
+}
+
+.login-field {
+    border-radius: 2px;
+    width: 100px;
+    border: none;
     margin: 2px;
 }
 
 .login-btn {
-    border-radius: 5px;
-    border: 1px solid grey;
+     margin-left: 2px;
+    background: none;
     color: grey;
-    margin: 2px;
+    border: none;
+    text-decoration: underline;
+
+}
+
+.login-btn:hover {
+    color: whitesmoke;
 }
 
 .dropdown-menu.sub-categories {
@@ -127,16 +141,11 @@ span:hover {
     transition: none;
 }
 
-@media only screen and (max-width: 1200px) {
- /*     .dropdown-menu.login input::placeholder {
-        size: 1.15vw;
-    } */
-/*     .nav-item {
-        text-align: left;
+@media only screen and (max-width: 1300px) {
+    .nav-item {
+        font-size: 1.22vw;
+        letter-spacing: normal;
     }
-    
-
-     */
 }
 
 

@@ -3,20 +3,29 @@ import React, { useEffect, useState } from 'react'
 import { createRef } from 'react';
 import uuid from 'react-uuid';
 
-
-export default function Order({cart, removeFromCart, updateAmount, url, empty}) {
+export default function Order({cart, removeFromCart, updateAmount, url, empty, loggedUser, setLoggedUser, Login}) {
 
   const [inputs, ] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
-  const [firstname, setFirstName] = useState('');
+/*   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [address, setAddress] = useState('');
   const [zip, setZip] = useState('');
-  const [city, setCity] = useState('');
-  const [email, setEmail] = useState('');
+  const [city, setCity] = useState(''); */
   const [finished, setFinished] = useState(false);
   
+  const [userInfo, setUserInfo] = useState([]);
+    
+  useEffect(() => {
+    axios.get(url + 'inc/rest_user_info.php', {withCredentials:true})
+    .then((resp) => {
+      setUserInfo(resp.data.userinfo)
+      console.log(resp.data.userinfo[0].id);})
+    .catch(e=>console.log(e.message))
+  }, []);
+
+
   useEffect(() => {
     for (let i = 0; i<cart.length;i++){
       inputs[i] = React.createRef();
@@ -37,14 +46,15 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
 
     //muuta json-muotoon
     const json = JSON.stringify({
-      firstname: firstname,
+/*       firstname: firstname,
       lastname: lastname,
       address: address,
       zip: zip,
-      city: city,
-      email: email,
+      city: city, */
+      id: userInfo[0].id,
       cart: cart,
     });
+    console.log(json);
     axios.post(url + 'order/save.php', json, {
       headers: {
         'Accept': 'application/json',
@@ -96,41 +106,52 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty}) 
         </tbody>
         <button className="empty-cart-btn" onClick={empty}>tyhjennä ostoskori</button>
       </table>
-      {cart.length > 0 &&
-      <>
+      {
+      !loggedUser?
+      
+      <div><h3> ostoskorisi on tyhjä</h3>
+        <p>Kirjaudu sisään tilataksesi</p><br/><Login setLoggedUser={setLoggedUser}/></div>:
+        cart.length === 0 && loggedUser ?
+        <h3> ostoskorisi on tyhjä</h3>:
+      
+      cart.length > 0 && loggedUser ? 
+      <form onSubmit={order}>
+      {userInfo.map(userinfo =>(
+        <>
         <h3>Tilaajan tiedot</h3>
-        <form onSubmit={order}>
+        
           <div className="form-group">
             <label>Etunimi</label>
-            <input className="form-control" onChange={e=>setFirstName(e.target.value)} required/>
+            <input className="form-control" value={userinfo.firstname} />
           </div>
           <div className="form-group">
             <label>Sukunimi</label>
-            <input className="form-control" onChange={e=>setLastName(e.target.value)} required/>
-          </div>
-          <div className="form-group">
-            <label>Sähköposti</label>
-            <input className="form-control" type="email" onChange={e=>setEmail(e.target.value)} required/>
+            <input className="form-control" value={userinfo.lastname} required/>
           </div>
           <div className="form-group">
             <label>Osoite</label>
-            <input className="form-control" onChange={e=>setAddress(e.target.value)} required/>
+            <input className="form-control" value={userinfo.address} required/>
           </div>
           <div className="form-group">
             <label>Postinumero</label>
-            <input className="form-control" type="number" min="0" max="99999" onChange={e=>setZip(e.target.value)} required/>
+            <input className="form-control" value={userinfo.zip} type="number" min="0" max="99999" required/>
           </div>
           <div className="form-group">
             <label>Kaupunki</label>
-            <input className="form-control" onChange={e=>setCity(e.target.value)} required/>
+            <input className="form-control" value={userinfo.city} required/>
           </div>
           <div className="order-button">
             <button>Tilaa</button>
           </div>
-        </form>
-      
-      </>
-      }
+        
+        </>
+      ))}
+      </form>
+
+
+     : <div>nothing</div>}
+
+
     </div>
   )
 } else {

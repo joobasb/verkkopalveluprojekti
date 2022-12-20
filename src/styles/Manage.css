@@ -24,9 +24,13 @@
     padding: 10px;
   }
   
-  .product-mng-table td:nth-child(5) {
-    width: 170px;
+  .product-mng-table td:nth-child(2) {
+    width: 140px;
   }
+  .product-mng-table td:nth-child(6) {
+    width: 500px;
+  }
+
   
   .add-product {
     width: 100%;

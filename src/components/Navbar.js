@@ -10,7 +10,8 @@ const searchIcon = <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15
 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg>;
 
-export default function Navbar({url, cart}) {
+
+export default function Navbar({url, cart, Login, logout, loggedUser, setLoggedUser, UserPage}) {
 
     const [categories, setCategories] = useState([]);
     const [search, setSearch] = useState('');
@@ -83,13 +84,24 @@ export default function Navbar({url, cart}) {
                 <li className="nav-item">
                     <NavLink to="/contact" className="nav-link"><span>o t a &nbsp; y h t e y t t ä</span></NavLink>
                 </li>
-                <li className="nav-item">
+        {/*         <li className="nav-item">
                     <NavLink to="/manage" className="nav-link"><span>manage</span></NavLink>
-                </li>
+                </li> */}
+
                 <li className="nav-item nav-cart">
                     <NavLink to="/order" className="nav-link"><span><Cart cart={cart}/></span></NavLink>
-                    
                 </li>
+                <li className="nav-item">
+                    {/* <li class="dropdown-item"><Login /></li> */}
+                    <div className="login-form">
+                        {loggedUser ? <NavLink to="userpage"><span>K ä y t t ä j ä t i l i</span></NavLink> : <Login setLoggedUser={setLoggedUser} />}
+                        
+                    </div>
+                </li>
+                <li className="nav-item">
+                        {!loggedUser ? <NavLink to="/Registerpage" className="nav-link"><span>rekisteröidy</span></NavLink> : ""}
+                </li>
+                
                 <li className="nav-item">
                     <ThemeChanger />
                 </li>

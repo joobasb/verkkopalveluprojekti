@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/Carousel.css'
+import { Link } from 'react-router-dom'
 
 export default function Carousel() {
   return (
@@ -24,16 +25,16 @@ export default function Carousel() {
 
         <div class="row"> 
           <div class="col-lg-4">
-          <img src="images/can.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
-          <p><a class="btn btn-secondary" href="#">Oluet &raquo;</a></p>
+          <img src="images/can.png"  alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
+          <Link to="/search/pbc"><p><a class="btn btn-secondary" href="#">Oluet &raquo;</a></p></Link>
           </div>
           <div class="col-lg-4">
           <img src="images/paita.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
-            <p><a class="btn btn-secondary" href="#">Oheistuotteet &raquo;</a></p>
+            <Link to="/products/4"><p><a class="btn btn-secondary" href="#">Oheistuotteet &raquo;</a></p></Link>
           </div>
           <div class="col-lg-4">
           <img src="images/contact.png" alt="..." class="rounded-circle border border-dark" width="200" height="200"/>      
-            <p><a class="btn btn-secondary" href="#">Ota yhteyttä &raquo;</a></p>
+          <Link to="/contact"><p><a class="btn btn-secondary" href="#">Ota yhteyttä &raquo;</a></p></Link>
           </div>
         </div>
         </div>
