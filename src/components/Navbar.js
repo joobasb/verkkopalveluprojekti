@@ -96,7 +96,7 @@ export default function Navbar({url, cart, Login, logout, loggedUser, setLoggedU
                 <li className="nav-item">
                     {/* <li class="dropdown-item"><Login /></li> */}
                     <div className="login-form">
-                        {loggedUser ? <NavLink to="userpage"><span>käyttäjätili</span></NavLink> : <Login setLoggedUser={setLoggedUser} />}
+                        {loggedUser ? <NavLink to="userpage"><span style={{marginTop:"3px"}}>käyttäjätili</span></NavLink> : <Login setLoggedUser={setLoggedUser} />}
                         
                     </div>
                 </li>

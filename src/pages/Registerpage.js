@@ -63,6 +63,6 @@ export default function Registerpage({url, loggedUser}){
         </div>
         </>
     )} else if (loggedUser) {
-        return (<h3>Rekisteröityminen onnistui! &nbsp; <Link to="/userpage" style={{textDecoration:"underline", color:"lightgrey"}}>Siirry käyttäjätilillesi</Link></h3>)
+        return (<h3>Rekisteröityminen onnistui! &nbsp; <Link to="/userpage" style={{textDecoration:"underline", color:"black"}}>Siirry käyttäjätilillesi</Link></h3>)
     }
 }
