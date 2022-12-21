@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Manage from '../components/Manage';
 import '../styles/Userpage.css';
 
 export default function Userpage({url, uname, loggedUser, logout}) {
   
   const [userInfo, setUserInfo] = useState([]);
-    
+  const [isAdmin, setIsAdmin] = useState(null);
+  
+  
   useEffect(() => {
     axios.get(url + 'inc/rest_user_info.php', {withCredentials:true})
     .then((resp) => {
-      console.log(resp.data.userinfo);
-      setUserInfo(resp.data.userinfo);})
+      console.log(resp.data.userinfo[0].admin);
+      setUserInfo(resp.data.userinfo)
+      setIsAdmin(resp.data.userinfo[0].admin);})
     .catch(e=>console.log(e.message))
   }, []);
 
   return (
     <>
+    
     {loggedUser ?
       <div className="userpage-container">
         <div className="row">
-        
+        <div className="col-md-8">
         <h1>tervetuloa {uname}</h1>
-         <Link to="/"><button type="button" className="logout-btn" onClick={logout}>kirjaudu ulos</button></Link> :
-        <div className="col-md-10 userinfo-column">
+        </div>
+        <div className="col-md-4">
+         <Link to="/"><button type="button" className="logout-btn" onClick={logout}>kirjaudu ulos</button></Link>
+         </div>
+         </div>
+        <div className="row">
+        <div className="col-md-6 userinfo-column">
           <h3>Käyttäjätunnuksesi tiedot</h3>
           {userInfo.map(userinfo =>(
           <ul>
@@ -46,9 +56,13 @@ export default function Userpage({url, uname, loggedUser, logout}) {
             </ul>
         ))}
         </div>
+        <div className="col-md-6 orders-column">
+          <h3>Tilauksesi</h3>
         </div>
-      </div>
-       : <h3>Et ole kirjautunut sisään</h3>}
+        </div>
+        </div>
+       : <div><h3>Et ole kirjautunut sisään</h3></div>}
+       <Manage url={url} isAdmin={isAdmin}/>
     </>
   )
 }

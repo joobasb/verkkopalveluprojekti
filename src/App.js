@@ -16,7 +16,7 @@ import Products from './pages/Products';
 import Registerpage from './pages/Registerpage';
 import Sidenav from './components/Sidenav';
 import Userpage from './pages/Userpage';
-import Manage from './pages/Manage';
+import Manage from './components/Manage';
 import ManageProducts from './components/ManageProducts';
 import ManageCategories from './components/ManageCategories';
 
@@ -29,10 +29,14 @@ function App() {
   
   //kirjautumisasiat
   const [loggedUser, setLoggedUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
 
   useEffect(() => {
     axios.post(URL + "inc/rest_login.php", {}, {withCredentials:true})
-    .then(resp => setLoggedUser(resp.data))
+    .then((resp) => { 
+      setLoggedUser(resp.data);
+      console.log(resp);
+      })
     .catch(e => console.log(e.message))
   }, []);
 
@@ -105,9 +109,9 @@ function App() {
         {/* <Route path="products" element={<Products url={URL} addToCart={addToCart}/>} /> */}
         <Route path="products/:categoryId" element={<Products url={URL} addToCart={addToCart}/>} />
         <Route path="product/:productId" element={<Product url={URL} addToCart={addToCart}/>}/>
-        <Route path="/registerpage" element={<Registerpage url={URL} setLoggedUser={setLoggedUser}/> }/>
+        <Route path="/registerpage" element={<Registerpage url={URL} loggedUser={loggedUser}/> }/>
         <Route path="search/:searchPhrase" element ={<Products url={URL} />} />
-        <Route path="/userpage" element={<Userpage url={URL} loggedUser={setLoggedUser} uname={loggedUser} logout={logout}/>}/>
+        <Route path="/userpage" element={<Userpage url={URL} loggedUser={loggedUser} uname={loggedUser} logout={logout}/>}/>
         <Route path="*" element={<NotFound />} />
         <Route path="/manage" element={<Manage url={URL} />}/>
       </Routes>
@@ -131,7 +135,10 @@ function Login({setLoggedUser}){
     formData.append("pw",pw);
 
     axios.post(URL + "inc/rest_login.php", formData, {withCredentials:true})
-      .then(response => setLoggedUser(response.data))
+      .then((response) => {
+        setLoggedUser(response.data);
+        console.log(response.data.admin)
+    })
       .catch(e=>console.log("syy:" + e.message));
   }
 
