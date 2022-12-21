@@ -2,17 +2,13 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { createRef } from 'react';
 import uuid from 'react-uuid';
+import '../styles/Orderpage.css';
 
 export default function Order({cart, removeFromCart, updateAmount, url, empty, loggedUser, setLoggedUser, Login}) {
 
   const [inputs, ] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
-/*   const [firstname, setFirstName] = useState('');
-  const [lastname, setLastName] = useState('');
-  const [address, setAddress] = useState('');
-  const [zip, setZip] = useState('');
-  const [city, setCity] = useState(''); */
   const [finished, setFinished] = useState(false);
   
   const [userInfo, setUserInfo] = useState([]);
@@ -46,11 +42,6 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty, l
 
     //muuta json-muotoon
     const json = JSON.stringify({
-/*       firstname: firstname,
-      lastname: lastname,
-      address: address,
-      zip: zip,
-      city: city, */
       id: userInfo[0].id,
       cart: cart,
     });
@@ -88,8 +79,8 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty, l
             sum+=parseFloat(product.price)*parseInt(product.amount);
             return (
               <tr key={uuid()}>
-                <td>{product.name}</td>
-                <td>{product.price} €</td>
+                <td><p>{product.name}</p></td>
+                <td><p>{product.price} €</p></td>
                 <td>
                   <input ref={inputs[index]} type="number" min="0" style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)}/>
                 </td>
@@ -98,8 +89,8 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty, l
             )
           })}
           <tr key={uuid()}>
-            <td></td>
-            <td>{sum ? sum.toFixed(2) : 0 } €</td>
+            <td style={{textAlign:"right", fontSize:"18px"}}><p>Kokonaissumma</p></td>
+            <td className="total">{sum ? sum.toFixed(2) : 0 } €</td>
             <td></td>
             <td></td>
           </tr>
@@ -107,12 +98,12 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty, l
         <button className="empty-cart-btn" onClick={empty}>tyhjennä ostoskori</button>
       </table>
       {
-      !loggedUser?
+      !loggedUser && cart.length < 1 ? 
       
       <div><h3> ostoskorisi on tyhjä</h3>
-        <p>Kirjaudu sisään tilataksesi</p><br/><Login setLoggedUser={setLoggedUser}/></div>:
+        <h4>Kirjaudu sisään tilataksesi</h4><Login setLoggedUser={setLoggedUser}/></div>:
         cart.length === 0 && loggedUser ?
-        <h3> ostoskorisi on tyhjä</h3>:
+        <h3> ostoskorisi on tyhjä</h3> :
       
       cart.length > 0 && loggedUser ? 
       <form onSubmit={order}>
@@ -149,7 +140,8 @@ export default function Order({cart, removeFromCart, updateAmount, url, empty, l
       </form>
 
 
-     : <div>nothing</div>}
+     : <div>
+     <h4>Kirjaudu sisään tilataksesi</h4><Login setLoggedUser={setLoggedUser}/></div>}
 
 
     </div>

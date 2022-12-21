@@ -23,6 +23,7 @@ header {
   background-color:#008080;
 }
 
+
 img.logo {
   position: fixed;
   top: 0;
@@ -50,10 +51,11 @@ img.logo {
   
 }
 
-.categorylist > .dropdown-item:hover {
-  color: grey;
+.dropdown-item {
+  color: #008080;
 }
-.categorylist > .dropdown-item:active {
+
+.categorylist > .dropdown-item:hover {
   color: grey;
 }
 
@@ -67,6 +69,7 @@ img.logo {
   border: none;
   background-color: white;
   margin-top: 7px;
+  margin-left: 1px;
 }
 
 .add-cart-btn { 
@@ -160,13 +163,31 @@ img.logo {
 
 .productpage-item {
   text-align: center;
-  margin: 10px;
+}
+
+.productpage-item {
+  padding-top: 50px;
+}
+
+.productpage-info {
+  text-align: left;
+}
+.productpage-info h3 {
+  text-align: center;
+  font-size: 40px;
 }
 
 .product-page-container {
+  padding: 20px;
+  padding-top: 20px;
   width: 100%;
   min-height: 600px;
   margin-top: 20px;
+  font-size: 20px;
+}
+
+.product-page-container p {
+  margin: 3px;
 }
 
 .productspage {

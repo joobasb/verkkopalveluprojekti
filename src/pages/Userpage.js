@@ -13,7 +13,6 @@ export default function Userpage({url, uname, loggedUser, logout}) {
   useEffect(() => {
     axios.get(url + 'inc/rest_user_info.php', {withCredentials:true})
     .then((resp) => {
-      console.log(resp.data.userinfo[0].admin);
       setUserInfo(resp.data.userinfo)
       setIsAdmin(resp.data.userinfo[0].admin);})
     .catch(e=>console.log(e.message))

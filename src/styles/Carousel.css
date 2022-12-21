@@ -7,10 +7,12 @@
     height: 50rem;
   }
 
+
   .carousel{
     position: relative;
     left: 50%;
     right: 50%;
+    margin-top: -20px;;
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
@@ -22,6 +24,12 @@
 
   .carousel-control-prev {
     display: none;
+}
+
+.marketing {
+  height: auto;
+  margin-bottom: 0;
+  padding-top: 10
 }
 
 .marketing .col-lg-4 {

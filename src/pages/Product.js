@@ -20,21 +20,22 @@ export default function Product({url, addToCart}) {
   return (
     <div className="product-page-container">
     <div className="row">
-    <div className="col-lg-5 productpage-item">
+    <div className="col-lg-6 productpage-info">
       <h3>{product.name}</h3>
-      <p>{product.brewery}</p><br/>
-      <p>{product.percent ? product.percent + "%" : "" }</p>
-      <p>{product.price}€</p>
-      <article>
+      <p>
         {product.description}
-      </article>
+      </p>
+      <p>Panimo: {product.brewery}</p>
+      <p>ABV: {product.percent ? product.percent + "%" : "" }</p>
+      <p>Hinta: {product.price}€</p>
+     
       <div key={product.id}>
-        <button className="primary-btn" type="button" onClick={e => addToCart(product)}>add</button>
+        <button className="primary-btn" type="button" onClick={e => addToCart(product)}>Lisää koriin</button>
       </div>
     </div>
-    <div className="col-lg-5 productpage-item">
+    <div className="col-lg-6 productpage-item">
       { product.image ?
-        <img style={{width: '450px'}} src={url + 'images/' + product?.image} alt="tuotekuva by crayion.com"/>:
+        <img style={{width: '450px', height:"auto"}} src={url + 'images/' + product?.image} alt="tuotekuva by crayion.com"/>:
         <img style={{width: '450px'}} src={url + 'images/placeholder.png'} />
       }
   

@@ -1,0 +1,26 @@
+
+.table a {
+    text-decoration: none;
+    color: red;
+}
+
+.total {
+    font-size: 18px;
+}
+
+.order-container form {
+    width: 50vw;
+}
+
+.form-group {
+    margin: 5px;
+}
+.login-btn {
+    color: black;
+}
+
+@media only screen and (max-width: 991px) {
+    .order-container form {
+        width: 100%;
+    }
+}

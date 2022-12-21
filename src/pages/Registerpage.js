@@ -41,7 +41,7 @@ export default function Registerpage({url, loggedUser}){
             <div className="col-md-6">
                 <form className="register-form" onSubmit={register}>
                     <label>Sähköpostiosoite (käyttäjätunnus)</label>
-                    <input className="form-control register-form-input" type="text" onChange={e=>setUname(e.target.value)} required/>
+                    <input className="form-control register-form-input" type="email" onChange={e=>setUname(e.target.value)} required/>
                     <label>Salasana</label>
                     <input className="form-control register-form-input" type="password" onChange={e=>setPw(e.target.value)}required/>
                     <label>Etunimi</label>
@@ -62,9 +62,7 @@ export default function Registerpage({url, loggedUser}){
         </div>
         </div>
         </>
-    )} else if (finished === true) {
-        return (<h3>Rekisteröityminen onnistui!</h3>)
-    } else if (loggedUser) {
-        return (<h3>Olet jo rekisteröitynyt <Link to="/userpage" style={{textDecoration:"underline", color:"lightgrey"}}>Siirry käyttäjätilillesi</Link></h3>)
+    )} else if (loggedUser) {
+        return (<h3>Rekisteröityminen onnistui! &nbsp; <Link to="/userpage" style={{textDecoration:"underline", color:"lightgrey"}}>Siirry käyttäjätilillesi</Link></h3>)
     }
 }

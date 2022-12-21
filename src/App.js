@@ -42,7 +42,10 @@ function App() {
 
   function logout(){
     axios.post(URL+'inc/rest_logout.php', {}, {withCredentials:true})
-      .then(resp => setLoggedUser(null))
+      .then((resp) =>{ 
+        setLoggedUser(null);
+        emptyCart();
+        })
       .catch(e=>console.log(e.message));
   }
 

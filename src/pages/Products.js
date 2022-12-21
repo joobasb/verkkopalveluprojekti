@@ -66,12 +66,12 @@ useEffect(() => {
     {products.map(product => (
         <div className="col-sm-4 product-card" key={product.id} style={{backgroundImage:`url("${url}images/${product.image}")`}}>
             
-           <Link to={'/product/' + product.id}><h3 className="product-card-header">{product.name}</h3></Link>
+           <Link to={'/product/' + product.id}><h3 className="product-card-header">{product.name}</h3>
             <div className="product-details">
                 <span>panimo: {product.brewery}</span><br/>
                 <span>hinta: {product.price}€</span><br/>
                 <span>{product.percent ? "abv: " + product.percent +  "%" : "" }</span>
-            </div>
+            </div></Link>
             <div className="add-cart-div">
                 <button className="add-cart-btn" type="button" onClick={e => addToCart(product)}>Lisää koriin</button>
             </div>

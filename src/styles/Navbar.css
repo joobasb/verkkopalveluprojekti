@@ -5,6 +5,7 @@
     z-index: 10;
     width: 100%;
     background-color:#008080 !important;
+    box-shadow: 2px 1px rgb(136, 136, 136);
 }
 
 .bg-light {
@@ -21,7 +22,7 @@ span:hover {
 
 .container-fluid {
     align-items: center;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
 .categorylist > .dropdown-item {
@@ -31,13 +32,14 @@ span:hover {
     margin: 5px;
     width: auto;
     text-align: center;
-    margin-left: 15px;
+    margin-left: 8px;
+    letter-spacing: 2px;
 }
 
 .nav-item #theme-icon {
     color: whitesmoke;
     position: absolute;
-    right: 4%;
+    right: 3%;
     margin-top: 12px;
 }
 
@@ -87,7 +89,7 @@ span:hover {
 .login-form, .login-form span{
 
     display:flex;
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .login-field {
@@ -100,7 +102,7 @@ span:hover {
 .login-btn {
      margin-left: 2px;
     background: none;
-    color: grey;
+    color: lightgrey;
     border: none;
     text-decoration: underline;
 
@@ -143,7 +145,7 @@ span:hover {
 
 @media only screen and (max-width: 1300px) {
     .nav-item {
-        font-size: 1.22vw;
+        font-size: 1.25vw;
         letter-spacing: normal;
     }
 }

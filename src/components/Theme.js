@@ -1,9 +1,9 @@
 export const lightTheme = {
-        body: '#E2E2E2',
-        text: '#363537',
+        body: '#B1D3D1',
+        text: '#363537 !important',
     }
 
 export const darkTheme = {
-    body: '#363537 !important',
+    body: '#585858 !important',
     text: '#FAFAFA',
 }
