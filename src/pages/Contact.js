@@ -1,47 +1,44 @@
 import '../styles/Contact.css';
 import React from 'react';
 import { useState } from 'react';
+import emailjs from "@emailjs/browser";
+//npm i @emailjs/browser
 
-export default function Contact() {
-  const [inputName, setInputName] = useState("")
-  const [inputEmail, setInputEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [orderNumber, setOrderNumber] = useState("") 
-
-  //lähetä tiedot konsoliin ja tyhjää kentät, testin vuoksi.
-  const send = (e) => {
-    e.preventDefault();
-    console.log (`Name: ${inputName} ` + `Email: ${inputEmail} ` + `Order number: ${orderNumber} ` + `Message: ${message}`);
-    setInputEmail("");
-    setInputName("");
-    setOrderNumber("");
-    setMessage("");
-    alert("Viestisi on lähetetty!");
+  export default function Contact() {
+    function send(e) {
+      e.preventDefault();
+      emailjs.sendForm('service_zyvft4u', 'template_tl87rtk', e.target, 'eUtIOYgzc_DC4wgjp')
+        .then((result) => {
+            alert('Kiitos viestistäsi!');
+        }, (error) => {
+            alert('Tapahtui virhe: ' + error.text + ' Yritä myöhemmin uudelleen!');
+        });
+        e.target.reset()
+      }
     
-  }
-
   return (
     <>
       <div class="container">
         <div class="row">
           <h1>OTA YHTEYTTÄ</h1>
+          <p>* Merkityt kentät ovat pakollisia</p>
             <div class="col-md-8">
               <form onSubmit={send}>
-                <div className="form">
+                <div>
                   <label>Etu- ja Sukunimi</label>
-                  <input type="text" class="form-control" id="full-name" placeholder="Esko Esimerkki" value={inputName} onChange={e => setInputName(e.target.value)} required/>
+                  <input type="text" class="form-control" id="full-name" placeholder="*" name="name" required/>
                 </div>
                 <div>
                   <label>Sähköposti</label>
-                  <input type="email" class="form-control" id="email-address" placeholder="esko@esimerkki.fi" value={inputEmail} onChange={e => setInputEmail(e.target.value)} required/>
+                  <input type="email" class="form-control" id="email-address" placeholder="*" name="email" required/>
                 </div>
                 <div>
                   <label>Tilausnumero</label>
-                  <input type="text" class="form-control" id="order-number" placeholder="Tämän voi jättää tyhjäksi mikäli viestisi ei koske tilausta" value={orderNumber} onChange={e => setOrderNumber(e.target.value)}/>
+                  <input type="number" class="form-control" id="order-number" placeholder="" name="subject"/>
                 </div>
                 <div>
                   <label>Viesti</label>
-                  <textarea class="form-control" id="message-field" placeholder="Esko pitää oluestanne!" rows="5" value={message} onChange={e => setMessage(e.target.value)} required ></textarea>
+                  <textarea class="form-control" id="message-field" placeholder="*" rows="5" name="message" required></textarea>
                 </div>
                 <div className="button-send">
                   <button>Lähetä</button>
